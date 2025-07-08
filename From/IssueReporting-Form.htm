@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="IssueReporting-Form.css">
 </head>
 <body>
-        <form action="SubmitIssue" method="post">
+        <form id="issueForm">
             <div class="left-box">
                 <img src="logo.png" alt="" width="150px" >
               <ul>
@@ -20,18 +20,18 @@
                 <label class="label-1">Name: </label>
                 <input type="text" name="name" id="name" required>
                 <label class="label-2">Location: </label>
-                <input type="text" name="Location" id="" required>
-                <select name="list" id="list">
-                    <option value="">- Types of issue - </option>
-                    <option value="Water">Water</option>
+                <input type="text" name="Location" id="location" required>
+                <select name="Problem" id="list" required>
+                    <option value="" disabled selected hidden>- Types of issue - </option>
+                    <option value="Water" >Water</option>
                     <option value="Electricity">Electricity</option>
                     <option value="Other">Other</option>
                 </select>
                 <label class="label-3">Description Of The Problem:</label>
                 <input type="text" name="issue-des" id="issue" required>
                 <label class="label-4">Image/Video Link: </label>
-                <input type="url" name="link" id="Video-link" required>
-                <button type="submit"> Submit </button>
+                <input type="url" name="link" id="videoLink" required>
+                <button type="submit" > Submit </button>
                 <div class="information">
                     <h2>How to contact City Office: </h2>
                     <ol>
@@ -42,5 +42,26 @@
                 </div>
             </div>
         </form>
+       <script>
+        // Run when form is submitted
+        document.getElementById("issueForm").addEventListener("submit", function(event) 
+        {
+            event.preventDefault(); // Stop page from refreshing
+
+            // Get values from input fields
+            const name = document.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const type = document.getElementById("list").value;
+            const description = document.getElementById("issue").value;
+            const videoLink = document.getElementById("videoLink").value;
+
+            // Print values to console
+            console.log("Name:", name);
+            console.log("Location:", location);
+            console.log("Type of Issue:", type);
+            console.log("Description:", description);
+            console.log("Video Link:", videoLink);
+        });
+    </script>
 </body>
 </html>
