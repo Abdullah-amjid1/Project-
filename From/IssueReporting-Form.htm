@@ -7,12 +7,40 @@
     <link rel="stylesheet" href="IssueReporting-Form.css">
 </head>
 <body>
-        <form >
+        <form action="SubmitIssue" method="post">
             <div class="left-box">
-                <p class="Welcome-text">Welcoem</p> 
-                <p></p>
+                <img src="logo.png" alt="" width="150px" >
+              <ul>
+                <li class="title">Community Issue</li>
+                <li class="description">Our community, our responsibility. Let’s <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   fix it together!</li>
+              </ul>
             </div>
-            <div class="Right-box" id="Fields"></div>
+            <div class="Right-box" id="Fields">
+                <h1>Notice Something Wrong? Report It Now!</h1>
+                <label class="label-1">Name: </label>
+                <input type="text" name="name" id="name" required>
+                <label class="label-2">Location: </label>
+                <input type="text" name="Location" id="" required>
+                <select name="list" id="list">
+                    <option value="">- Types of issue - </option>
+                    <option value="Water">Water</option>
+                    <option value="Electricity">Electricity</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label class="label-3">Description Of The Problem:</label>
+                <input type="text" name="issue-des" id="issue" required>
+                <label class="label-4">Image/Video Link: </label>
+                <input type="url" name="link" id="Video-link" required>
+                <button type="submit"> Submit </button>
+                <div class="information">
+                    <h2>How to contact City Office: </h2>
+                    <ol>
+                        <li>Help Line: </li>
+                        <li>Visit the city office at :</li>
+                        <li>use the mobile app and website for the faster response</li>
+                    </ol>
+                </div>
+            </div>
         </form>
 </body>
 </html>
