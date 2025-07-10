@@ -1,68 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Issue Reporting Form</title>
-    <link rel="stylesheet" href="IssueReporting-Form.css">
-    <link rel="icon" type="image/x-icon" href="logo.png">
-</head>
-<body>
-        <form id="issueForm">
-            <div class="left-box">
-                <img src="logo.png" alt="" width="150px" >
-              <ul>
-                <li class="title">Community Issue</li>
-                <li class="description">Our community, our responsibility. Let’s <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   fix it together!</li>
-              </ul>
-            </div>
-            <div class="Right-box" id="Fields">
-                <h1>Notice Something Wrong? Report It Now!</h1>
-                <label class="label-1">Name: </label>
-                <input type="text" name="name" id="name" required>
-                <label class="label-2">Location: </label>
-                <input type="text" name="Location" id="location" required>
-                <select name="Problem" id="list" required>
+    <link rel="stylesheet" href="IssueReporting-Form.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="logo.png" />
+  </head>
+  <body >
+    <form id="issueForm">
+      <div class="left-box">
+        <img src="logo.png" alt="" width="150px" />
+        <ul>
+          <li class="title">Community Issue</li>
+          <li class="description">
+            Our community, our responsibility. Let’s fix it together!
+          </li>
+        </ul>
+      </div>
+      <div class="Right-box p-5" id="Fields">
+        <h1 class="Note mt-4 pb-2" style="width: 100%; font-size: 28px; padding-left: 20px; font-weight: bolder; cursor: pointer;" >Notice Something Wrong? Report It Now!</h1>
+        <!-- <label class="label-1">Name: </label>
+                <input type="text" name="name" id="name" required> -->
+        <div class="mb-3" id = "name">
+          <label for="exampleInputEmail1" class="form-label"
+            >Name:</label
+          >
+          <input
+            type="Name"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          required/>
+        </div>
+        <!-- <label class="label-2">Location: </label>
+                <input type="text" name="Location" id="location" required> -->
+        <div class="mb-3 " id="Location">
+          <label for="exampleInputEmail1" class="form-label">Location</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp" equired
+          />
+        </div>
+        <!-- <select name="Problem" id="list" required>
                     <option value="" disabled selected hidden>- Types of issue - </option>
                     <option value="Water" >Water</option>
                     <option value="Electricity">Electricity</option>
                     <option value="Other">Other</option>
-                </select>
-                <label class="label-3">Description Of The Problem:</label>
-                <input type="text" name="issue-des" id="issue" required>
-                <label class="label-4">Image/Video Link: </label>
-                <input type="url" name="link" id="videoLink" required>
-                <button type="submit" > Submit </button>
-                <div class="information">
-                    <h2>How to contact City Office: </h2>
-                    <ol>
-                        <li>Help Line: </li>
-                        <li>Visit the city office at :</li>
-                        <li>use the mobile app and website for the faster response</li>
-                    </ol>
-                </div>
-            </div>
-        </form>
-       <script>
-        // Run when form is submitted
-        document.getElementById("issueForm").addEventListener("submit", function(event) 
-        {
-            event.preventDefault(); // Stop page from refreshing
+                </select> -->
+        <div class="dropdown" >
+          <button
+            class="btn btn-secondary dropdown-toggle bg-white text-dark"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false" style="width: 100%;"
+          >
+            - Type of Issue -
+          </button>
+          <ul class="dropdown-menu" equired>
+            <li><a class="dropdown-item" href="#">Water</a></li>
+            <li><a class="dropdown-item" href="#">Electricity</a></li>
+            <li><a class="dropdown-item" href="#">other</a></li>
+          </ul>
+        </div >
+        <div class="mb-3 " id="Description">
+          <label for="exampleInputEmail1" class="form-label"
+            >Description of the Problem:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp" equired
+          />
+        </div>
+        <div class="mb-3" id="Link">
+          <label for="exampleInputEmail1" class="form-label"
+            >Image/Video URL :</label
+          >
+          <input
+            type="url"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp" equired
+          />
+        </div>
+        <button type="submit" class="rounded" >Submit &#8594;</button>
+        <div class="information mt-2 ">
+          <h2>How to contact City Office:</h2>
+          <ol>
+            <li>Help Line:</li>
+            <li>Visit the city office at :</li>
+            <li>use the mobile app and website for the faster response</li>
+          </ol>
+        </div>
+      </div>
+    </form>
+    <script>
+      // Run when form is submitted
+      document
+        .getElementById("issueForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Stop page from refreshing
 
-            // Get values from input fields
-            const name = document.getElementById("name").value;
-            const location = document.getElementById("location").value;
-            const type = document.getElementById("list").value;
-            const description = document.getElementById("issue").value;
-            const videoLink = document.getElementById("videoLink").value;
+          // Get values from input fields
+          const name = document.getElementById("name").value;
+          const location = document.getElementById("location").value;
+          const type = document.getElementById("list").value;
+          const description = document.getElementById("issue").value;
+          const videoLink = document.getElementById("videoLink").value;
 
-            // Print values to console
-            console.log("Name:", name);
-            console.log("Location:", location);
-            console.log("Type of Issue:", type);
-            console.log("Description:", description);
-            console.log("Video Link:", videoLink);
+          // Print values to console
+          console.log("Name:", name);
+          console.log("Location:", location);
+          console.log("Type of Issue:", type);
+          console.log("Description:", description);
+          console.log("Video Link:", videoLink);
         });
     </script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

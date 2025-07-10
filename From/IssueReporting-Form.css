@@ -1,20 +1,23 @@
 
 body
 {
-    background-color: white;
     display: flex;
     margin-top: -2px;
     margin-bottom: -3px;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.192);
+    background-image: url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 form
 {
     width:  70rem;
     height: 50rem;
-    background-color: aqua;
+    background-color: white;
     border-radius: 15px ;
     display: flex;
     align-items: center;
@@ -29,7 +32,7 @@ form
     height: 50rem;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    background-color: #F55951;
+    background-color: #5A1B1D;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,8 +40,20 @@ form
     flex-wrap: wrap;
     align-content: center;
     column-gap: 10px;
-    
+}
 
+.left-box img
+{
+    animation-iteration-count: infinite;
+    animation-duration: 18s;
+    animation-name: animation;
+    animation-timing-function: linear;
+}
+
+.left-box img:hover
+{
+    animation-play-state: paused;
+    cursor: pointer;
 }
 ul
 {
@@ -49,9 +64,11 @@ ul
 }
 .title
 {
-    font-family: Copperplate, Papyrus, fantasy;
+    font-family: "Gill Sans", sans-serif;
     color: white;
     font-size: 2.5rem;
+    font-weight: bolder;
+    cursor: pointer;
     
 }
 .description
@@ -59,13 +76,20 @@ ul
    font-size: 15px;
    color: white; 
    font-weight: bold;
-     font-family: 'Brush Script MT', cursive;
+    font-family: 'Brush Script MT', cursive;
+    display: flex;
+    text-align: center;
+    width: 300px;
+    margin-left: 10px;
+    font-family: system-ui;
+    cursor: pointer;
 }
 .Right-box
 {
     background-color: #F1E8E6;
     width: 45rem;
     height: 50rem;
+    
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     display: flex;
@@ -91,21 +115,22 @@ input
     margin-bottom: 15px;
     padding-left: 10px;
 }
-button
+.rounded
 {
-    width: 605px;
     height: 40px;
     border-radius: 5px;
     border: none;
     color: white;
-    background-color: #F55951;
+    background-color: #5A1B1D;
     font-size: 19px;
     letter-spacing: 1px;
     font-family: "Gill Sans", sans-serif;
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 15px;
+    width: 100%;
 }
+
 #list
 {
     width: 608px;
@@ -118,10 +143,44 @@ button
 }
 .information
 {
-    width: 570px;
     background: #ffffff76;
-    padding: 20px;
+    padding: 10px;
+    padding-left: 20px;
     border-radius: 9px;
     font-size: 19px;
     color: rgba(0, 0, 0, 0.753);
+    width: 100%;
+}
+
+@keyframes animation
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
+.rounded:hover
+{
+   animation: submit 0.5s linear forwards;
+   box-shadow:  0 0 10px  #5A1B1D;
+}
+@keyframes submit 
+{
+    0%
+    {
+        letter-spacing: 0px;
+
+    }
+    100%
+    {
+        letter-spacing: 2px;
+    }
+}
+#name, #Location, .dropdown, #Description, #Link 
+{
+    width: 100%;
 }
